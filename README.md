@@ -47,15 +47,18 @@ Pour chaque exercice :
 ### Exercice 1 : État et Effets 
 #### Objectif : Implémenter une recherche en temps réel
 
-- [ ] 1.1 Modifier le composant ProductSearch pour utiliser la recherche
-- [ ] 1.2 Implémenter le debounce sur la recherche
-- [ ] 1.3 Documenter votre solution ici
+- [x] 1.1 Modifier le composant ProductSearch pour utiliser la recherche
+- [x] 1.2 Implémenter le debounce sur la recherche
+- [x] 1.3 Documenter votre solution ici
 
 _Votre réponse pour l'exercice 1 :_
 ```
-Expliquez votre solution ici
-[Ajoutez vos captures d'écran]
+Hook useDebounce : Gère les requêtes API en retardant l'appel jusqu'à ce que l'utilisateur arrête de taper pendant 500ms.
+Composant ProductSearch : Utilise ce hook pour capter le terme de recherche et déclencher l'appel API.
+Requête API dans useProductSearch : Effectue une recherche basée sur le terme saisi.
 ```
+![Product Search](assets/screenshots/Exercice1.gif)
+
 
 ### Exercice 2 : Context et Internationalisation
 #### Objectif : Gérer les préférences de langue
