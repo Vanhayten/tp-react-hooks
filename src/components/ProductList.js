@@ -1,7 +1,16 @@
 import React, { useContext } from 'react';
 import { ThemeContext, LanguageContext } from "../App";
 
-const ProductList = ({ products, loading, error }) => {
+const ProductList = ({
+  products,
+  loading,
+  error,
+  currentPage,
+  totalPages,
+  nextPage,
+  previousPage,
+  onReload,
+}) => {
   const { isDarkTheme } = useContext(ThemeContext);
   const { language } = useContext(LanguageContext);
 
@@ -25,7 +34,11 @@ const ProductList = ({ products, loading, error }) => {
 
   return (
     <div>
-      {/* TODO: Exercice 4.1 - Ajouter le bouton de rechargement */}
+      <div className="text-center mb-4">
+        <button onClick={onReload} className="btn btn-primary">
+          {language === "fr" ? "Recharger" : "Reload"}
+        </button>
+      </div>
       <div className="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
         {products.map((product) => (
           <div key={product.id} className="col">
@@ -55,28 +68,35 @@ const ProductList = ({ products, loading, error }) => {
         ))}
       </div>
 
-      {/* TODO: Exercice 4.2 - Ajouter les contrôles de pagination */}
-      {/* Exemple de structure pour la pagination :
       <nav className="mt-4">
         <ul className="pagination justify-content-center">
           <li className="page-item">
-            <button className="page-link" onClick={previousPage}>
-              Précédent
+            <button
+              className="page-link"
+              onClick={previousPage}
+              disabled={currentPage === 1}
+            >
+              {language === "fr" ? "Précédent" : "Previous"}
             </button>
           </li>
           <li className="page-item">
             <span className="page-link">
-              Page {currentPage} sur {totalPages}
+              {language === "fr"
+                ? `Page ${currentPage} sur ${totalPages}`
+                : `Page ${currentPage} of ${totalPages}`}
             </span>
           </li>
           <li className="page-item">
-            <button className="page-link" onClick={nextPage}>
-              Suivant
+            <button
+              className="page-link"
+              onClick={nextPage}
+              disabled={currentPage === totalPages}
+            >
+              {language === "fr" ? "Suivant" : "Next"}
             </button>
           </li>
         </ul>
       </nav>
-      */}
     </div>
   );
 };

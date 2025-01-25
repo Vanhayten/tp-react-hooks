@@ -13,8 +13,18 @@ const App = () => {
   const [language, setLanguage] = useState("en");
 
   const [searchTerm, setSearchTerm] = useState("");
+  const itemsPerPage = 10;
 
-  const { products, loading, error } = useProductSearch(searchTerm);
+  const {
+    products,
+    loading,
+    error,
+    reloadProducts,
+    nextPage,
+    previousPage,
+    currentPage,
+    totalPages,
+  } = useProductSearch(searchTerm, itemsPerPage);
 
   return (
     <ThemeContext.Provider value={{ isDarkTheme, setIsDarkTheme }}>
@@ -37,7 +47,16 @@ const App = () => {
           </header>
           <main>
             <ProductSearch onSearch={setSearchTerm} />
-            <ProductList products={products} loading={loading} error={error} />
+            <ProductList
+              products={products}
+              loading={loading}
+              error={error}
+              onReload={reloadProducts}
+              currentPage={currentPage}
+              totalPages={totalPages}
+              nextPage={nextPage}
+              previousPage={previousPage}
+            />
           </main>
         </div>
       </LanguageContext.Provider>
