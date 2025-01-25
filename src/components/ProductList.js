@@ -1,15 +1,17 @@
 import React, { useContext } from 'react';
-import { ThemeContext } from '../App';
+import { ThemeContext, LanguageContext } from "../App";
 
 const ProductList = ({ products, loading, error }) => {
   const { isDarkTheme } = useContext(ThemeContext);
-  // TODO: Exercice 2.1 - Utiliser le LanguageContext pour les traductions
+  const { language } = useContext(LanguageContext);
 
   if (loading)
     return (
       <div className="text-center my-4">
         <div className="spinner-border" role="status">
-          <span className="visually-hidden">Chargement...</span>
+          <span className="visually-hidden">
+            {language === "fr" ? "Chargement..." : "Loading..."}
+          </span>
         </div>
       </div>
     );
@@ -17,7 +19,7 @@ const ProductList = ({ products, loading, error }) => {
   if (error)
     return (
       <div className="alert alert-danger" role="alert">
-        Erreur: {error}
+        {language === "fr" ? "Erreur: " : "Error: "} {error}
       </div>
     );
 
@@ -44,7 +46,7 @@ const ProductList = ({ products, loading, error }) => {
                 <h5 className="card-title">{product.title}</h5>
                 <p className="card-text">{product.description}</p>
                 <p className="card-text">
-                  <strong>Prix: </strong>
+                  <strong>{language === "fr" ? "Prix: " : "Price: "} </strong>
                   {product.price}€
                 </p>
               </div>

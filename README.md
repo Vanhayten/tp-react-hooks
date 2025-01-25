@@ -63,15 +63,17 @@ Requête API dans useProductSearch : Effectue une recherche basée sur le terme 
 ### Exercice 2 : Context et Internationalisation
 #### Objectif : Gérer les préférences de langue
 
-- [ ] 2.1 Créer le LanguageContext
-- [ ] 2.2 Ajouter le sélecteur de langue
-- [ ] 2.3 Documenter votre solution ici
+- [x] 2.1 Créer le LanguageContext
+- [x] 2.2 Ajouter le sélecteur de langue
+- [x] 2.3 Documenter votre solution ici
 
 _Votre réponse pour l'exercice 2 :_
 ```
-Expliquez votre solution ici
-[Ajoutez vos captures d'écran]
+- `LanguageContext`: Un contexte React a été créé pour gérer la langue de l'application.
+- Sélecteur de langue: Un composant `LanguageSelector` permet de changer la langue entre "en" et "fr". Lorsqu'un utilisateur clique, l'état de la langue est mis à jour, ce qui déclenche un changement global de langue.
+- Mise en œuvre de l'internationalisation: Le changement de langue affecte le texte et les composants de l'interface utilisateur.
 ```
+![langue button](assets/screenshots/Exercice2.gif)
 
 ### Exercice 3 : Hooks Personnalisés
 #### Objectif : Créer des hooks réutilisables
