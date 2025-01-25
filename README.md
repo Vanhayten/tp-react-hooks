@@ -78,14 +78,13 @@ _Votre réponse pour l'exercice 2 :_
 ### Exercice 3 : Hooks Personnalisés
 #### Objectif : Créer des hooks réutilisables
 
-- [ ] 3.1 Créer le hook useDebounce
-- [ ] 3.2 Créer le hook useLocalStorage
-- [ ] 3.3 Documenter votre solution ici
+- [x] 3.1 Créer le hook useDebounce
+- [x] 3.2 Créer le hook useLocalStorage
+- [x] 3.3 Documenter votre solution ici
 
 _Votre réponse pour l'exercice 3 :_
 ```
-Expliquez votre solution ici
-[Ajoutez vos captures d'écran]
+J’ai ajouté useLocalStorage pour conserver la langue sélectionnée.
 ```
 
 ### Exercice 4 : Gestion Asynchrone et Pagination
